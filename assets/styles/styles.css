@@ -1,0 +1,1089 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    background-color: white;
+    width: 100%;
+    overflow-x: hidden;
+    }
+
+.contenedor {width: 90%; 
+            max-width: 1280px; 
+            margin: auto
+            }
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.en_estancia, .en_actividades {
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(212,255,220,1) 56%);
+}
+
+.en_alojamiento, .en_galeria {
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(212,255,220,1) 56%);
+}
+
+.separador {
+    height: 80px;
+    background-color: #d4ffdc;
+}
+
+/* Menu */
+
+.menu {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.menu .contenedor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu .contenedor img {
+    width: 65%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin-right: 20px;
+    font-weight: 500;
+}
+
+nav ul li a {
+    color: #14140a;;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(128,128,64);
+}
+
+.menu nav ul li select {
+    cursor: pointer;
+}
+
+.menu nav ul li select {
+    border: none;
+}
+
+/* Portada */
+
+.portada {
+    background-image: url(../img/fotoportada3.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: 500px; 
+    transition: background 0.1s linear;
+}
+
+.portada {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.portada_izquierda {
+    width: 70%;
+}
+
+.portada h1, #contacto h1 {
+    color: #bee9eb;
+    font-weight: 400;
+    font-size: 50px;
+    letter-spacing: 2px;
+    font-family: 'Noto Serif JP', serif;
+    float: left;
+    margin-top: -20px;
+    margin-left: 60px;
+    text-shadow: 2px 2px 5px rgba(71,206,70,0.65);
+}
+
+.portada .h1_abajo, #contacto .h1_abajo {
+    margin-left: 50%;
+}
+
+.portada .portada_derecha, .caja_formulario {
+    width: 20%;
+    text-align: center;
+    background-color: rgba(99, 99, 50, 0.90);
+    height: 100%;
+    margin-right: 100px;
+}
+
+.portada_derecha_logo {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.portada .portada_derecha a, .estancia_izquierda a, form input[type="submit"], #alojamiento a {
+    font-size: 25px;
+    letter-spacing: 3px;
+    color: #bee9eb;
+    background-color: rgba(128, 128, 64, 0.90);
+    border: 2px solid #bee9eb;
+    border-radius: 3px;
+    padding: 8px 30px;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.portada .portada_derecha a:hover, .estancia_izquierda a:hover, form input[type="submit"]:hover, #alojamiento a:hover {
+    background-color: rgba(82, 82, 40, 0.90);   
+    transition: background 0.1s linear;
+}
+
+h2 {
+    letter-spacing: 2px;
+   color: rgb(99, 99, 50);
+   font-size: 250%; 
+   font-family: 'Noto Serif JP', serif;
+   margin-bottom: -5px;
+}
+
+p {
+    font-size: 15px;
+    color: #636363;
+    text-align: justify;
+}
+
+/* Estancia */
+
+#estancia {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.estancia_izquierda {
+    text-align: justify;
+    width: 55%;
+}
+
+.estancia_izquierda a {
+    letter-spacing: 2px;
+    display: block;
+    float: right;
+    text-transform: uppercase;
+    color: white;
+    border-color: white;
+    font-size: 15px;
+}
+
+.estancia_izquierda h2 {
+    margin-top: -4px;
+}
+
+.estancia_derecha {
+    width: 40%;
+}
+
+/* Popup */
+
+.popup {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 20%;
+    width: 50%;
+    left: 25%;
+    background: rgb(131,133,80);
+    box-shadow: 1px 1px 7px #000;
+    text-align: justify;
+    
+    padding: 10px;
+
+    z-index: -10000;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+
+.popup.fade {
+    z-index: 10000;
+    opacity: 1;
+    display: flex;
+}
+
+.popup h5{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.popup p {
+  color: white;
+}
+
+.popup .cerrar {
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  color: white;
+  background: rgb(131,133,80);
+  width: 30px;
+  cursor: pointer;
+}
+
+/* Alojamiento */
+
+#alojamiento {
+    display: flex;
+    justify-content: space-around;
+}
+
+#alojamiento a {
+    width: 40%;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(128, 128, 64);
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+#alojamiento .rotado {
+    -moz-transform: rotate(-180deg);
+     -o-transform: rotate(-180deg);
+     -webkit-transform: rotate(-180deg);
+     transform: rotate(-180deg);
+}
+
+.alojamiento_izquierda, .alojamiento_derecha {
+    position: relative;
+    float: left;
+    /* Ancho y alto que tendra el contenedor de la tarjeta */
+    width: 50%;
+    height: 650px;
+    margin: 10px 0 10px 4%;
+    /* Determinamos la profundidad de los elementos */
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+}
+
+.alojamiento_izquierda_card, .alojamiento_derecha_card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+    /* Determinamos la trasicion de los efectos */
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    -o-transition: -o-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+/* Determinamos los grados de la rotación de la tarjeta */
+.alojamiento_izquierda_card.flipped, .alojamiento_derecha_card.flipped {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+
+.alojamiento_izquierda_front,
+.alojamiento_izquierda_back,
+.alojamiento_derecha_front,
+.alojamiento_derecha_back {
+    display: block;
+    height: 100%;
+    width: 90%;
+    color: white;
+    text-align: center;
+    font-size: 300%;
+    padding: 15px;
+    position: absolute;
+    align-items: center;
+    /*visibility hidden para esconder una cara mientras se muestra la otra */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/*Determinamos los estilos deseados en la cara de atras de la tarjeta*/
+.alojamiento_izquierda_back, .alojamiento_derecha_back {
+    width: 100%;
+    font-size: 16px;
+    line-height: 25px;
+    background: #ff5a5a;
+    /* Animacion para rotar la cara trasera */
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+
+/*Determinamos los estilos deseados en la cara de delantera de la tarjeta*/
+.alojamiento_izquierda_front, .alojamiento_derecha_front, .alojamiento_izquierda_back, .alojamiento_derecha_back {
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.alojamiento_izquierda_front{
+    background-image: url(../img/comodidades_2.jpg);
+}
+
+.alojamiento_izquierda_back{
+    background-color: rgba(99, 99, 50, 0.90);   
+}
+
+.alojamiento_derecha_front {
+    background-image: url(../img/servicios_2.jpg);
+    background-position: bottom ;
+}
+
+.alojamiento_derecha_back {
+    background-color: rgba(99, 99, 50, 0.90);
+}
+
+.alojamiento_izquierda_back p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.alojamiento_derecha_back ul li {
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+    list-style: circle;
+}
+
+/* Actividades */
+
+#actividades {
+    margin-top: 100px;
+    text-align: justify;
+}
+
+#actividades h2, #slider h2, #contacto h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 45px;
+}
+
+#actividades p {
+    text-align: center;
+}
+
+.todas_actividades {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.una_actividad {
+    text-align: center;
+    margin-top: 50px;
+    height: 20%;
+}
+
+.una_actividad img {
+    display: inline-block;
+}
+
+.una_actividad p {
+    width: 200px;
+    margin: auto;
+    margin-top: 10px;
+    color: rgb(153, 153, 153);
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+.img_actividad {
+    width: 25px;
+}
+
+.columna_mobile_1, .columna_mobile_2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Galería */
+/* Slider */
+
+#slider {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.h2_galeria {
+    text-align: center;
+    font-size: 45px;
+    margin-top: 0px;
+}
+
+.slider_izquierda{
+    width: 50%;
+}
+
+.slider_derecha {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.slider_derecha img {
+    width: 100%;
+}
+
+.slider_derecha img:hover {
+    cursor: pointer;
+}
+
+.p_galeria {
+    text-align: center;
+}
+
+/* Formulario de contacto */
+
+#contacto {
+    display: flex;
+    justify-content: space-around;
+    background-image: url(../img/sierras.jpg);
+    height: 715px;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 50px;
+}
+
+#contacto .frase_contacto {
+    width: 70%;
+}
+
+form h4 {
+    color: #bee9eb;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+form input {
+    display: inline-block;
+    width: 65%;
+    padding: 10px 20px;
+}
+
+form label {
+    color: #bee9eb;
+    margin-bottom: 15px;
+}
+
+.form_contacto {
+    display: flex;
+    position: relative;
+} 
+
+.mensaje_error, .enviando, .mensaje_enviado {
+    color: red;
+    margin-top: -20px;
+    margin-left: 20px;
+}
+
+.enviando, .mensaje_enviado{
+    color: white;
+}
+
+.adultos_niños {
+    margin-bottom: 10px;
+}
+
+.fecha {
+    width: 80%;
+    color: gray;
+}
+
+form hr {
+    margin-bottom: -5px;
+}
+
+form textarea {
+    resize: none;
+    width: 90%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+form input[type="submit"] {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+#QAdultos, #Qninos {
+    color: gray;
+}
+
+.enviar {
+    cursor: pointer;
+}
+
+input[disabled]{
+    cursor: not-allowed;
+    background-color: rgba(94, 94, 78, 0.9) !important;
+}
+
+/* Footer */
+
+footer {
+    background-color: #272b28;
+    height: 80px;   
+    padding-top: 15px;
+}
+
+footer img {
+    width: 25%;
+    height: 100%;
+}
+
+footer .contenedor {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer a {
+    color: rgba(124, 124, 64);
+}
+
+.fab {
+    font-size: 50px;
+}
+
+@media screen and (max-width: 540px) {
+
+    .ocultar_li {
+        display: none;
+    }
+
+    #alojamiento a {
+    font-size: 10px;
+    }
+
+    .menu {
+    padding-top: 7px;
+    padding-bottom: 0px;
+    align-content: center;
+    }
+
+    .menu .contenedor img {
+        width: 100%;
+    }
+
+    .puntos_suspensivos {
+        display: none;
+    }
+
+    .portada {
+        height: 230px;
+        text-align: left;
+        background-position: bottom;
+        background-size: auto;
+    }
+
+    .portada .h1_abajo, #contacto .h1_abajo {
+    width: 60%;
+    margin-left: 60px;
+    }
+
+    .portada h1, #contacto h1 {
+    font-size: 23px;
+    letter-spacing: 1px;
+    width: 100%;
+    }
+
+    .portada_izquierda {
+    width: 40%;
+    margin-right: 40px;
+    margin-left: -43px;
+    margin-top: 20px;
+    }
+
+    .portada_derecha .portada_derecha_logo {
+        display: none;
+    }
+
+    .portada .portada_derecha {
+        width: 39%;
+        padding: 0px 15px;
+        margin-right: 15px;
+    }
+
+    .portada .portada_derecha_botones {
+            margin-top: 55%;
+    }
+
+    .portada .portada_derecha a, .estancia_izquierda a, form input[type="submit"] {
+        font-size: 11px;
+        letter-spacing: 1px;
+        padding: 5px 15px;
+        margin-bottom: 20px;
+        margin-top: -6px;
+    }
+
+    #estancia h2, #actividades h2, .h2_galeria {
+        letter-spacing: 0px;
+        font-size: 170%;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 10px;
+    }
+
+    #estancia{
+        display: block;
+        margin-top: 20px;
+    }
+
+    .estancia_izquierda {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .estancia_izquierda p {
+        margin-bottom: -5px;
+    }
+
+    .estancia_izquierda a {
+        margin-top: -2px;
+    }
+
+    .estancia_derecha img {
+        width: 250%;
+    }
+
+    .separador {
+        height: 40px;
+    }
+
+    .separador_mobile {
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(212,255,220,1) 56%);
+    }
+
+    #alojamiento {
+        display: block;
+    }
+
+    .alojamiento_izquierda, .alojamiento_derecha {
+    width: 100%;
+    height: 500px;
+    margin: 10px 0 60px 0%;
+    }
+
+     #alojamiento h3 {
+        font-size: 33px;
+     }
+
+     #alojamiento .alojamiento_derecha_back h3, #alojamiento .alojamiento_izquierda_back h3 {
+        font-size: 20px;
+     }
+
+     #alojamiento p, #alojamiento li {
+        font-size: 10px;
+        line-height: 15px;
+     }
+
+     #alojamiento .alojamiento_izquierda_back, #alojamiento .alojamiento_derecha_back {
+        width: 90%;
+     }
+
+    .columna_mobile_1, .columna_mobile_2 {
+        display: block;
+        justify-content: center;
+    }
+
+    .una_actividad {
+        margin-top: 0px;
+        height: 70px;
+    }
+
+    .una_actividad p {
+        width: 160px;
+        margin-top: 0px;
+        line-height: 12px;
+        letter-spacing: 0px;
+    }
+
+    .aventura {
+        width: 15px;
+    }
+
+    #slider {
+        display: block;
+        width: 100%;
+    }
+
+    .slider_izquierda, .slider_derecha {
+        width: 100%;
+    }
+
+    .bx-wrapper .bx-pager {
+    display: none;
+    }
+
+    .slider_derecha {
+        margin-top: -25px;
+    }
+
+    #contacto {
+        display: block;
+        padding: 10px;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .caja_formulario {
+        width: 100%;
+        background-color: rgba(99, 99, 50, 0.00);
+    }
+
+    .mensaje_error, .enviando, .mensaje_enviado {
+        background-color: rgba(99, 99, 50, 0.90);
+    }
+
+    footer a {
+        font-size: 12px;
+    }
+
+    .fab {
+        font-size: 38px;
+    }
+
+    footer img {
+        display: none;
+    }
+
+    .popup {
+        display: block;
+        top: 1%;
+        width: 90%;
+        left: 2%;
+    }
+
+    .popup p {
+        font-size: 9px;
+    }
+
+    .popup h5 {
+        margin: 0;
+        margin-bottom: -5px;
+        letter-spacing: 1px;
+    }
+
+    .popup img {
+        width: 80%;
+        margin-top: 10px;
+    }
+
+    @media screen and (min-width: 540px) and (max-width: 540px) {
+        .menu .contenedor img {
+            width: 60%;
+        }
+
+        form input, .fecha {
+            width: 85%;
+        }
+
+
+        .portada .portada_derecha {
+            width: 25%;
+            margin-right: 60px;
+        }
+
+        .portada_izquierda {
+        width: 46%;
+        margin-right: 0;
+        margin-left: -20px;
+        }
+
+
+        .portada .portada_derecha_botones {
+            margin-top: 60%;
+        }
+
+
+        .portada .portada_derecha_botones a {
+            display: block;
+        }
+    }
+
+
+    @media screen and (min-width: 280px) and (max-width: 280px) {
+        .menu .contenedor img {
+            width: 120%;
+        }
+
+
+        .portada .portada_derecha {
+            margin-right: 0px;
+        }
+
+        .portada h1, #contacto h1 {
+            font-size: 20px;
+        }
+
+        #alojamiento h3 {
+            font-size: 29px;
+        }
+
+        .alojamiento_izquierda, .alojamiento_derecha {
+            height: 610px;
+        }
+
+        .una_actividad p {
+            width: 140px;
+        }
+
+        footer a {
+            font-size: 10px;
+        }
+
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 320px){
+
+        .portada .portada_derecha {
+            margin-right: 6px;
+        }
+
+        .alojamiento_izquierda, .alojamiento_derecha {
+            height: 550px;
+        }
+    }
+
+}
+
+@media screen and (min-width:  541px) and (max-width: 1024px) {
+
+    .portada {
+        height: 350px;
+        background-size: auto;
+    }
+
+    .portada .portada_derecha, .caja_formulario {
+        width: 40%;
+        margin-right: 50px;
+    }
+
+    .menu .contenedor img {
+        width: 60%;
+    }
+
+    .portada h1, #contacto h1 {
+        font-weight: 200;
+        font-size: 28px;
+        letter-spacing: 0px;
+        margin-top: -20px;
+        margin-left: 10px;
+    }
+
+    .portada .h1_abajo, #contacto .h1_abajo {
+        margin-left: 40%;
+    }
+
+    .portada .portada_derecha a, .estancia_izquierda a, form input[type="submit"] {
+        font-size: 20px;
+        letter-spacing: 1px;
+        padding: 8px 19px;
+        margin-bottom: 30px;
+    }
+
+    .portada_derecha_logo{
+        padding-top: 65px;
+        padding-bottom: 25px;
+    }
+
+    .portada img {
+        width: 80%;
+    }
+
+    #estancia {
+        display: block;
+    }
+
+    .estancia_izquierda, .estancia_derecha {
+        width: 100%;
+    }
+
+    .estancia_derecha img {
+        width: 100%;
+    }
+
+    .separador_mobile {
+        background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(212,255,220,1) 56%);
+    }
+
+    #alojamiento {
+        display: block;
+    }
+
+    .alojamiento_izquierda, .alojamiento_derecha {
+        width: 100%;
+        height: 590px;
+    }
+
+    .alojamiento_derecha {
+        margin-top: 50px;
+    }
+
+    #actividades {
+        margin-top: 1350px;
+    }
+
+    .aventura {
+        width: 17px;
+    }
+
+    .una_actividad {
+        width: 189px;
+    }
+
+    .una_actividad p {
+        width: 190px;
+    }
+
+    .ocultar_li {
+        display: none;
+    }
+
+    #slider {
+        display: block;
+        width: 100%;
+    }
+
+    .slider_izquierda, .slider_derecha {
+        width: 100%;
+    }
+
+    .slider_derecha{
+        justify-content: center;
+    }
+
+    .slider_derecha img {
+        width: 115px;
+    }
+
+    .caja_formulario {
+        width: 45%;
+        margin-right: 24px;
+    }
+
+    .mensaje_error .enviando, .mensaje_enviado {
+        font-size: 13px;
+    }
+
+    .popup {
+        display: flex;
+        top: 2%;
+        width: 90%;
+        left: 3.5%;
+    }
+
+    .popup_izquierda {
+        width: 600%;
+    }
+
+    .popup_izquierda img {
+        width: 100%;
+    }
+
+   @media screen and (min-width:  541px) and (max-width: 675px){
+        .popup {
+            display: block;
+            top: 1%;
+            width: 90%;
+            left: 2%;
+        }
+
+    .popup p {
+        font-size: 9px;
+    }
+
+    .popup h5 {
+        margin: 0;
+        margin-bottom: -5px;
+        letter-spacing: 1px;
+    }
+
+    .popup img {
+        width: 11%;
+        margin-top: 10px;
+    } 
+   }
+
+}
+
+@media screen and (max-width: 1600px) and (min-width:1005px){
+    .portada h1, #contacto h1 {
+        font-size: 45px;
+    }
+
+
+    .menu .contenedor img {
+        width: 50%;
+    }
+
+    .portada img {
+        width: 90%;
+    }
+
+    .slider_izquierda {
+        width: 55%;
+    }
+
+    .mensaje_error, .enviando, .mensaje_enviado {
+        font-size: 12px;
+    }
+
+    .popup {
+        top: 2%;
+        width: 75%;
+        left: 15%;
+    }
+
+    .popup_izquierda {
+        width: 600%;
+    }
+
+    .popup_izquierda img {
+        width: 100%;
+    }
+
+}
+
